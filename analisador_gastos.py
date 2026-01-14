@@ -1,7 +1,7 @@
 import time
 
 moradia = 0
-alimentação = 0
+alimentacao = 0
 lazer = 0
 outros = 0
 
@@ -61,7 +61,7 @@ while True:
                     print(f'O gasto de R$ {gasto}, foi adicionado a categoria: MORADIA')
                     break
                 elif categorias == '2' or categorias == 'alimentação':
-                    alimentação += gasto
+                    alimentacao += gasto
                     print(f'O gasto de R$ {gasto}, foi adicionado a categoria: ALIMENTAÇÃO')
                     break
                 elif categorias == '3' or categorias == 'lazer':
@@ -81,12 +81,12 @@ while True:
             if pergunta == "sim" or pergunta == 's':
                 break
             elif pergunta == 'não' or pergunta == 'n' or pergunta == 'nao':
-                total = float(moradia + alimentação + lazer + outros)
+                total = float(moradia + alimentacao + lazer + outros)
 
                 print ('== == == Extrato == == ==')
                 print(f'Usuario: {usuario}\n')
                 print(f'Moradia: R${moradia:^10.2f}')
-                print(f'Alimentação: R${alimentação:^10.2f}')
+                print(f'Alimentação: R${alimentacao:^10.2f}')
                 print(f'Lazer: R${lazer:^10.2f}')
                 print(f'Outros: R${outros:^10.2f}')
                 print(f'Total de gastos até o momento: R${total:^10.2f}\n')
@@ -98,7 +98,7 @@ while True:
                 with open('extrato_gastos.txt', 'w', encoding = 'utf-8') as arquivo:                    
                     arquivo.write(f'EXTRATO DE GASTOS - USUÁRIO: {usuario}\n')
                     arquivo.write(f'Moradia: R$ {moradia:.2f}\n')
-                    arquivo.write(f'Alimentação: R$ {alimentação:.2f}\n')
+                    arquivo.write(f'Alimentação: R$ {alimentacao:.2f}\n')
                     arquivo.write(f'Lazer: R$ {lazer:.2f}\n')
                     arquivo.write(f'Outros: R$ {outros:.2f}\n')
                     arquivo.write(f'TOTAL: R$ {total:.2f}\n')
@@ -119,3 +119,4 @@ while True:
 
 
         
+
